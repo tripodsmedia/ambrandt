@@ -122,7 +122,11 @@ body::before {
 }
 
 .tiktok-link {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
   text-align: center;
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -130,14 +134,28 @@ body::before {
   color: var(--gold-dim);
   text-decoration: none;
   letter-spacing: 0.03em;
-  padding-bottom: 0.5rem;
-  transition: color 0.2s;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  /* Block-level centering */
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
 }
 
 .tiktok-link:hover {
   color: var(--gold-light);
+  border-color: rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.05);
 }
 
+.tiktok-icon {
+  width: 14px;
+  height: 14px;
+}
 .divider {
   display: flex;
   align-items: center;
@@ -351,7 +369,10 @@ body::before {
 </section>
 
 <a href="https://www.tiktok.com/@ambrandt_books" target="_blank" rel="noopener" class="tiktok-link">
-  @ambrandt_books auf TikTok
+  <svg class="tiktok-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.75a8.18 8.18 0 004.76 1.52V6.84a4.84 4.84 0 01-1-.15z"/>
+  </svg>
+  @ambrandt_books
 </a>
 
 <div class="divider">
