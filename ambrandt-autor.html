@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.&#8201;M. Brandt – Cozy Monster Romance aus dem Harz</title>
+<meta name="description" content="A. M. Brandt schreibt Cozy Monster Romance in deutschen Settings. Teufel im Harz, Touch-Starved Heroes und Happy Ends. Jetzt auf Kindle Unlimited.">
+<meta name="keywords" content="Monster Romance, Cozy Romance, Kindle Unlimited, A.M. Brandt, Harz, Teufel, deutsche Romance, Spicy Books">
+<meta property="og:title" content="A. M. Brandt – Cozy Monster Romance aus dem Harz">
+<meta property="og:description" content="Teufel im Harz, Touch-Starved Heroes und Happy Ends. Jetzt auf Kindle Unlimited.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ambrandt.tripods.media">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-400i.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-500i.woff2') format('woff2'); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-600i.woff2') format('woff2'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Outfit'; src: url('fonts/outfit-300.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Outfit'; src: url('fonts/outfit-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Outfit'; src: url('fonts/outfit-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+
+:root {
+  --bg-deep: #1a1210;
+  --bg-card: #241c18;
+  --gold: #c9a84c;
+  --gold-light: #dfc06e;
+  --gold-dim: #8a7333;
+  --cream: #e8ddd0;
+  --cream-soft: #c4b8a8;
+  --text-main: #d4c8b8;
+  --text-muted: #9a8e80;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  background: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.site-header {
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  position: relative;
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.35);
+}
+
+.author-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.1em;
+}
+
+.author-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-dim);
+  margin-top: 0.25rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3.5rem 1.5rem 2.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.8vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.divider-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.divider-sym { color: var(--gold-dim); font-family: var(--font-display); font-size: 1.1rem; }
+
+.books-section {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold-dim);
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 6px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.book-card::after {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(139, 32, 32, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.book-cover {
+  width: 220px;
+  border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.book-info { position: relative; z-index: 1; }
+
+.book-series {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.book-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.15rem;
+  line-height: 1.25;
+}
+
+.book-author {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold-dim);
+  font-style: italic;
+  margin-bottom: 1.3rem;
+}
+
+.book-blurb { font-size: 0.92rem; line-height: 1.85; color: var(--text-main); margin-bottom: 1.5rem; }
+.book-blurb p { margin-bottom: 0.8rem; }
+.book-blurb p:last-child { margin-bottom: 0; }
+
+.book-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+
+.trope-tag {
+  font-size: 0.78rem;
+  color: var(--cream-soft);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  padding: 0.3rem 0.65rem;
+}
+
+.heat-level { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.25);
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+}
+
+.cta-btn svg { width: 15px; height: 15px; }
+
+.ku-note { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.7rem; }
+
+.coming-soon {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px dashed rgba(201, 168, 76, 0.15);
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease-out 0.4s both;
+}
+
+.coming-soon-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--cream-soft); margin-bottom: 0.4rem; }
+.coming-soon-sub { font-size: 0.85rem; color: var(--text-muted); }
+
+.site-footer {
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  max-width: 660px;
+  margin: 2rem auto 0;
+}
+
+.footer-claim { font-family: var(--font-display); font-size: 0.95rem; font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-publisher { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.8rem; }
+.footer-logo { width: 22px; height: auto; opacity: 0.45; }
+.footer-publisher-name { font-size: 0.72rem; color: rgba(154, 142, 128, 0.5); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+.footer-publisher-name:hover { color: var(--text-muted); }
+.footer-copy { font-size: 0.68rem; color: rgba(154, 142, 128, 0.4); }
+
+@media (max-width: 700px) {
+  .book-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; gap: 1.8rem; }
+  .book-cover { width: 180px; margin: 0 auto; }
+  .book-meta { justify-content: center; }
+  .book-blurb { text-align: left; }
+  .hero { padding: 3rem 1.5rem 2rem; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <p class="author-wordmark">A.&#8201;M. Brandt</p>
+  <p class="author-wordmark-sub">Cozy Monster Romance aus dem Harz</p>
+</header>
+
+<section class="hero">
+  <p class="hero-tagline">Teufel im Harz. Touch-Starved Heroes. Happy Ends.</p>
+  <p class="hero-sub">
+    Geschichten über Frauen, die etwas Neues wagen – und entdecken, dass manche Monster es verdienen, geliebt zu werden.
+  </p>
+</section>
+
+<div class="divider">
+  <span class="divider-line"></span>
+  <span class="divider-sym">&#9670;</span>
+  <span class="divider-line"></span>
+</div>
+
+<section class="books-section">
+  <p class="section-title">Bücher</p>
+
+  <!-- === BUCH 1 === -->
+  <article class="book-card" id="des-teufels-buecher">
+    <img src="cover.jpg" alt="Des Teufels Bücher – Buchcover" class="book-cover">
+    <div class="book-info">
+      <span class="book-series">Harz-Monster-Romance &middot; Band&nbsp;1</span>
+      <h2 class="book-title">Des Teufels Bücher</h2>
+      <p class="book-author">A.&#8201;M. Brandt</p>
+      <div class="book-blurb">
+        <p>Hannah flieht vor ihrem ausgebrannten Leben in Hamburg und kauft einen Buchladen im Harz. Der perfekte Neuanfang – bis sie entdeckt, dass im zweiten Stock bereits jemand wohnt.</p>
+        <p>Sam hat bernsteinfarbene Augen. Hörner. Einen Schwanz. Und er hat dreihundert Jahre auf jemanden gewartet, der bei ihm bleibt.</p>
+      </div>
+      <div class="book-meta">
+        <span class="trope-tag">Grumpy / Sunshine</span>
+        <span class="trope-tag">Forced Proximity</span>
+        <span class="trope-tag">Possessive MMC</span>
+        <span class="trope-tag">He Falls First</span>
+      </div>
+      <p class="heat-level">Heat Level: <span>🌶️🌶️🌶️🌶️</span></p>
+
+      <!-- ⬇️ AMAZON-LINK HIER ANPASSEN ⬇️ -->
+      <a href="https://amzn.eu/d/02fInNuM" class="cta-btn" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Jetzt auf Amazon lesen
+      </a>
+      <span class="ku-note">Kostenlos in Kindle Unlimited</span>
+    </div>
+  </article>
+
+  <!--
+  =====================================================
+  NEUES BUCH HINZUFÜGEN:
+  1. Kopiere den <article class="book-card"> Block oben
+  2. Ändere: id, Cover-src, Series-Info, Titel, Blurb,
+     Tropes, Heat Level, Amazon-Link
+  3. Füge ihn vor dem coming-soon Block ein
+  =====================================================
+  -->
+
+  <div class="coming-soon">
+    <p class="coming-soon-title">Band 2 erscheint im April 2026</p>
+    <p class="coming-soon-sub">Die Harz-Monster-Romance geht weiter.</p>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <p class="footer-claim">Cozy. Spicy. Deutsch.</p>
+  <nav class="footer-links">
+    <a href="https://www.tiktok.com/@ambrandt_books" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://tripods.media/impressum.html">Impressum</a>
+    <a href="https://tripods.media/datenschutz.html">Datenschutz</a>
+  </nav>
+  <div class="footer-publisher">
+    <img src="logo.png" alt="Tripods Media" class="footer-logo">
+    <a href="https://tripods.media" class="footer-publisher-name">Ein Imprint von Tripods Media</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Tripods Media. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
