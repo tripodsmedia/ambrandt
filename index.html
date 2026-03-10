@@ -317,6 +317,42 @@ body::before {
   animation: fadeUp 0.8s ease-out 0.4s both;
 }
 
+.testimonial {
+  max-width: 520px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.testimonial blockquote {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial p {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cream-soft);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.testimonial p + p {
+  margin-top: 0.8rem;
+}
+
+.testimonial footer {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gold-dim);
+  margin-top: 0.6rem;
+  letter-spacing: 0.05em;
+}
+ 
 .coming-soon-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--cream-soft); margin-bottom: 0.4rem; }
 .coming-soon-sub { font-size: 0.85rem; color: var(--text-muted); }
 
@@ -412,6 +448,15 @@ body::before {
     </div>
   </article>
 
+  <!-- Leserstimme -->
+<section class="testimonial">
+  <blockquote>
+    <p>„Ich hab es einfach an einem Stück durch gelesen, das hatte ich noch nie."</p>
+    <p>„Die Wärme zwischen Hannah und Sam war so ruhig, liebevoll und einfach schön zu lesen. […] Er ist stark und beschützend und sehnt sich gleichzeitig nach Nähe ohne Hannah darauf zu reduzieren."</p>
+    <footer>— eine Leserin auf TikTok</footer>
+  </blockquote>
+</section>
+  
   <!--
   =====================================================
   NEUES BUCH HINZUFÜGEN:
