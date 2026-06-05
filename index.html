@@ -10,6 +10,10 @@
 <meta property="og:description" content="Teufel im Harz, Touch-Starved Heroes und Happy Ends. Jetzt auf Kindle Unlimited.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ambrandt.tripods.media">
+
+<!-- Brevo-Formular: Basis-Styles -->
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
 <style>
 /* ===== LOCAL FONTS ===== */
 @font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cg-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
@@ -122,11 +126,11 @@ body::before {
 }
 
 .tiktok-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 0 auto;
+  width: fit-content;
   text-align: center;
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -138,12 +142,7 @@ body::before {
   border: 1px solid rgba(201, 168, 76, 0.15);
   border-radius: 50px;
   transition: all 0.25s ease;
-  /* Block-level centering */
-  display: flex;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5rem;
+  margin: 0 auto 0.5rem;
 }
 
 .tiktok-link:hover {
@@ -156,6 +155,7 @@ body::before {
   width: 14px;
   height: 14px;
 }
+
 .divider {
   display: flex;
   align-items: center;
@@ -365,6 +365,144 @@ body::before {
   letter-spacing: 0.01em;
 }
 
+/* ===== NEWSLETTER (Brevo-Formular, an das Layout angepasst) ===== */
+.am-nl-section { max-width: 920px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+.am-nl-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 6px;
+  padding: 2.75rem 2.5rem;
+  text-align: center;
+}
+
+.am-nl-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+/* Brevo-Container transparent schalten, damit nur die Karte zählt */
+.am-nl-card .sib-form-container,
+.am-nl-card #sib-container {
+  background: transparent !important;
+  border: none !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.am-nl-card .sib-form-message-panel { display: none; } /* main.js blendet bei Bedarf ein */
+
+.am-nl-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.am-nl-intro {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 1.6rem;
+}
+
+.am-nl-card .sib-input { max-width: 420px; margin: 0 auto; }
+
+.am-nl-card input#EMAIL {
+  width: 100%;
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem;
+  color: var(--cream) !important;
+  background: var(--bg-deep) !important;
+  border: 1px solid var(--gold-dim) !important;
+  border-radius: 4px !important;
+  padding: 0.85rem 1rem !important;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.am-nl-card input#EMAIL:focus { outline: none; border-color: var(--gold) !important; }
+.am-nl-card input#EMAIL::placeholder { color: var(--text-muted); }
+
+/* Label für Screenreader erhalten, visuell ausblenden */
+.am-nl-card .entry__label {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.am-nl-consent {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 440px;
+  margin: 1.2rem auto 0;
+}
+
+.am-nl-consent a { color: var(--gold-dim); text-decoration: underline; }
+.am-nl-consent a:hover { color: var(--gold); }
+.am-nl-card #sib-container a { color: var(--gold-dim); }
+
+/* Button im Stil von .cta-btn */
+.am-nl-card .sib-form-block__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em;
+  color: var(--bg-deep) !important;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.9rem 2rem !important;
+  margin-top: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.25);
+  transition: all 0.25s ease;
+}
+
+.am-nl-card .sib-form-block__button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+}
+
+/* reCAPTCHA: Google-Badge ausblenden (Attributionszeile steht stattdessen im Formular) */
+.grecaptcha-badge { visibility: hidden !important; }
+
+.am-nl-recaptcha {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 1.2rem auto 0;
+  opacity: 0.75;
+}
+
+.am-nl-recaptcha a { color: var(--gold-dim); text-decoration: underline; }
+.am-nl-recaptcha a:hover { color: var(--gold); }
+
+/* ===== FOOTER ===== */
 .site-footer {
   border-top: 1px solid rgba(201, 168, 76, 0.1);
   padding: 2.5rem 1.5rem;
@@ -385,12 +523,14 @@ body::before {
 .footer-publisher-name:hover { color: var(--text-muted); }
 .footer-copy { font-size: 0.68rem; color: rgba(154, 142, 128, 0.4); }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
   .book-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; gap: 1.8rem; }
   .book-cover { width: 180px; margin: 0 auto; }
   .book-meta { justify-content: center; }
   .book-blurb { text-align: left; }
   .hero { padding: 3rem 1.5rem 2rem; }
+  .am-nl-card { padding: 2rem 1.5rem; }
 }
 
 @keyframes fadeUp {
@@ -426,7 +566,7 @@ body::before {
   </svg>
   @ambrandt_books
 </a>
-  
+
 <div class="divider">
   <span class="divider-line"></span>
   <span class="divider-sym">&#9670;</span>
@@ -467,21 +607,21 @@ body::before {
   <section class="testimonial">
     <blockquote>
       <p>„Ich hab es einfach an einem Stück durchgelesen, das hatte ich noch nie.“</p>
-      <p>„Die W&auml;rme zwischen Hannah und Sam war so ruhig, liebevoll und einfach sch&ouml;n zu lesen. […] Er ist stark und besch&uuml;tzend und sehnt sich gleichzeitig nach N&auml;he, ohne Hannah darauf zu reduzieren.“</p>
+      <p>„Die Wärme zwischen Hannah und Sam war so ruhig, liebevoll und einfach schön zu lesen. […] Er ist stark und beschützend und sehnt sich gleichzeitig nach Nähe, ohne Hannah darauf zu reduzieren.“</p>
       <footer>– eine Leserin auf TikTok</footer>
     </blockquote>
   </section>
 
-<!-- === BUCH 2 === -->
+  <!-- === BUCH 2 === -->
   <article class="book-card" id="teufelsnaechte">
-    <img src="cover-2.jpg" alt="Teufelsn&auml;chte – Buchcover" class="book-cover">
+    <img src="cover-2.jpg" alt="Teufelsnächte – Buchcover" class="book-cover">
     <div class="book-info">
       <span class="book-series">Harz-Monster-Romance &middot; Band&nbsp;2</span>
-      <h2 class="book-title">Teufelsn&auml;chte</h2>
+      <h2 class="book-title">Teufelsnächte</h2>
       <p class="book-author">A.&#8201;M. Brandt</p>
       <div class="book-blurb">
-        <p>Lena f&auml;hrt mit ihren Freundinnen in den Harz. Eine Woche Urlaub, Wandern, Abschalten. Dann ist Walpurgisnacht &ndash; und am Feuer steht jemand, der sie ansieht, als h&auml;tte er sie gesucht.</p>
-        <p>Raban ist ein Teufel. Er steht seit Jahrhunderten am Rand des Festes und schaut zu. Er hat vergessen, wie man etwas anderes tut. Bis er Lena sieht &ndash; die Frau, die auch nur zuschaut.</p>
+        <p>Lena fährt mit ihren Freundinnen in den Harz. Eine Woche Urlaub, Wandern, Abschalten. Dann ist Walpurgisnacht – und am Feuer steht jemand, der sie ansieht, als hätte er sie gesucht.</p>
+        <p>Raban ist ein Teufel. Er steht seit Jahrhunderten am Rand des Festes und schaut zu. Er hat vergessen, wie man etwas anderes tut. Bis er Lena sieht – die Frau, die auch nur zuschaut.</p>
         <p>Eine Nacht. Eine Frage, der sie nicht mehr ausweichen kann: Was will ich eigentlich?</p>
       </div>
       <div class="book-meta">
@@ -501,27 +641,96 @@ body::before {
     </div>
   </article>
 
-  
   <!--
   =====================================================
   NEUES BUCH HINZUFÜGEN:
-  1. Kopiere den <article class="book-card"> Block oben
+  1. Kopiere einen <article class="book-card"> Block oben
   2. Ändere: id, Cover-src, Series-Info, Titel, Blurb,
      Tropes, Heat Level, Amazon-Link
-  3. Füge ihn vor dem coming-soon Block ein
+  3. Füge ihn hier ein (vor dem schließenden </section>)
   =====================================================
   -->
-<!--
+
+  <!--
   <div class="coming-soon">
     <p class="coming-soon-title">Band 3 · Juni 2026</p>
     <p class="coming-soon-sub">Teufelsworte</p>
-    <p class="coming-soon-teaser">L&ouml;se deine Fesseln.</p>
+    <p class="coming-soon-teaser">Löse deine Fesseln.</p>
   </div>
--->
+  -->
 </section>
 
-    
-  <footer class="site-footer">
+<!-- ===================== NEWSLETTER (Brevo) ===================== -->
+<div class="divider">
+  <span class="divider-line"></span>
+  <span class="divider-sym">&#9670;</span>
+  <span class="divider-line"></span>
+</div>
+
+<section class="am-nl-section">
+  <div class="am-nl-card sib-form">
+    <div id="sib-form-container" class="sib-form-container">
+
+      <div id="error-message" class="sib-form-message-panel" style="font-family:var(--font-body); font-size:14px; text-align:center; color:#661d1d; background-color:#ffeded; border:1px solid #ff4949; border-radius:3px; max-width:420px; margin:0 auto 1rem; padding:0.75rem;">
+        <div class="sib-form-message-panel__text">
+          <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+        </div>
+      </div>
+
+      <div id="success-message" class="sib-form-message-panel" style="font-family:var(--font-body); font-size:14px; text-align:center; color:#085229; background-color:#e7faf0; border:1px solid #13ce66; border-radius:3px; max-width:420px; margin:0 auto 1rem; padding:0.75rem;">
+        <div class="sib-form-message-panel__text">
+          <span class="sib-form-message-panel__inner-text">Fast geschafft! Bitte bestätige deine Anmeldung über den Link, den wir dir gerade per E-Mail geschickt haben.</span>
+        </div>
+      </div>
+
+      <div id="sib-container" class="sib-container--large sib-container--vertical">
+        <form id="sib-form" method="POST" action="https://24097663.sibforms.com/serve/MUIFAD7Apfxf2I2_BSmMWuAU1fdoMRtFie_EGjk3WxMTZFJtX5SaqusfJGT5pp_0VabU_aIOyjhjR3eMhxY0bE0ujcLloGh1rWFgxHE287VS-fKS5fZQQCW9lljsp8pCgagnEaA6c4CIF1-nUv-kLnsWrIEFB2qYMUUvbb6LT-DczKgTncyjn3EG9ZZysATDVzBaFMlI13AMr8sbzA==" data-type="subscription">
+
+          <div class="am-nl-heading">Bleib im Harz.</div>
+          <p class="am-nl-intro">Trag dich ein und sei die Erste, die erfährt, wenn ein neues Buch erscheint. Kein Spam – nur, wenn es wirklich etwas Neues gibt.</p>
+
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" for="EMAIL">Gib deine E-Mail-Adresse ein, um dich anzumelden</label>
+                <div class="entry__field">
+                  <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Deine E-Mail-Adresse" data-required="true" required />
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-family:var(--font-body); font-size:13px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+            </div>
+          </div>
+
+          <p class="am-nl-consent">
+            Mit deiner Anmeldung bestätigst du, dass du den Newsletter von A.&#8201;M. Brandt erhalten und über neue Bücher informiert werden möchtest. Abmeldung jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="https://tripods.media/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+          </p>
+
+          <div class="g-recaptcha-v3" data-sitekey="6Le1OAItAAAAAEFvilovY8u1V8Gg6G9eHYR08Vr2" style="display: none"></div>
+
+          <div class="sib-form-block">
+            <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+              </svg>
+              DABEI SEIN
+            </button>
+          </div>
+
+          <p class="am-nl-recaptcha">
+            Geschützt durch reCAPTCHA. Es gelten die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzbestimmungen</a> und <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Nutzungsbedingungen</a> von Google.
+          </p>
+
+          <input type="text" name="email_address_check" value="" class="input--hidden">
+          <input type="hidden" name="locale" value="de">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
   <p class="footer-claim">Cozy. Spicy. Deutsch.</p>
   <nav class="footer-links">
     <a href="https://tripods.media/impressum.html">Impressum</a>
@@ -533,6 +742,26 @@ body::before {
   </div>
   <p class="footer-copy">&copy; 2026 Tripods Media. Alle Rechte vorbehalten.</p>
 </footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
+  window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.translation = {
+    common: {
+      selectedList: '{quantity} Liste ausgewählt',
+      selectedLists: '{quantity} Listen ausgewählt',
+      selectedOption: '{quantity} ausgewählt',
+      selectedOptions: '{quantity} ausgewählt'
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le1OAItAAAAAEFvilovY8u1V8Gg6G9eHYR08Vr2&hl=de" async defer></script>
 
 </body>
 </html>
